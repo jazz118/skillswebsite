@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img id="logo" src="logo.png">
+        <nav>
+            <div class="links-container">
+                <a class="underline" href="home.html">Home</a>
+                <a class="underline" href="about.html">About</a>
+                <a class="underline" href="contact.html">Contact</a>
+                <a class="underline" href="products.html">Products</a>
+            </div>
+        </nav>
+        <div class="clear"></div>
+        <div class="socials-container">
+            <img class="socials" src="twitter.png">
+            <img class="socials" src="instagram.png">
+            <img class="socials" src="tiktok.png">
+        </div>
+    </header> 
+    <div class="manualslideshow">
+        <img class="slideshow" src="instagram.png">
+        <img class="slideshow" src="logo.png">
+        <img class="slideshow" src="shoes.jpg">
+        <img class="slideshow" src="twitter.png">
+        <img class="slideshow" src="tiktok.png">
+
+        <button class="leftbutton" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="rightbutton" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+    <div class="aboutSection">
+    </div>
+    <script>
+        let slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            let i;
+            let x = document.getElementsByClassName("slideshow");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length };
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
