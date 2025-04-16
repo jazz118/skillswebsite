@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <img id="logo" src="logo.png">
+        <button id="button1" onclick="mode()">press for mode</button>
         <nav>
             <div class="links-container">
                 <a class="underline" href="home.html">Home</a>
@@ -20,7 +23,7 @@
             <img class="socials" src="instagram.png">
             <img class="socials" src="tiktok.png">
         </div>
-    </header> 
+    </header>
     <div class="manualslideshow">
         <img class="slideshow" src="instagram.png">
         <img class="slideshow" src="logo.png">
@@ -33,7 +36,10 @@
     </div>
     <div class="aboutSection">
     </div>
+    <p>hello there</p>
+    <p>how are you</p>
     <script>
+        let currentModeValue = false;
         let slideIndex = 1;
         showDivs(slideIndex);
 
@@ -51,6 +57,29 @@
             }
             x[slideIndex - 1].style.display = "block";
         }
+        function mode() {
+            console.log("test", currentModeValue)
+            if (currentModeValue === false) {
+                console.log(currentModeValue)
+                document.body.style.backgroundColor = "black";
+                let allP = document.querySelectorAll("p");
+                document.body.style.color = "white"
+                currentModeValue = true;
+                console.log(currentModeValue)
+
+            }
+            else {
+                console.log("hehehehe")
+
+                document.body.style.backgroundColor = "white";
+                let allP = document.querySelectorAll("p");
+                document.body.style.color = "black"
+                currentModeValue = false;
+                console.log("hahahaha")
+
+            }
+        }
+
     </script>
 </body>
 
