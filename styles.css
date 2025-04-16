@@ -12,7 +12,7 @@ D7893E
 }
 
 body {
-    background-color: #3E4340;
+    background-color: #ffffff;
 }
 
 nav {
@@ -24,14 +24,36 @@ nav {
 }
 
 .underline {
+    position: relative;
     text-decoration: none;
     color: white;
     font-size: 200%;
 }
 
+.underline:hover {
+    color: white;
+}
+
+.underline::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .underline:hover::before {
+    transform: scaleX(1);
+  }
+
 .socials {
-    width: 3%;
-    height: 30px;
+    width: 3.5%;
+    height: 40px;
 }
 
 .links-container {
@@ -46,12 +68,24 @@ nav {
 
 header {
     background-color: #D7893E;
-    border-bottom: solid rgb(255, 255, 255) 3px;
+    border-bottom: solid rgb(0, 0, 0) 3px;
+    position: sticky;
+    width: 100%;
+    z-index: 1;
+}
 
+div {}
+
+#mode {
+    width: 2%;
+    margin-left: 97%;
+    margin-top: 1%;
 }
 
 #logo {
     margin-left: 45%;
+    margin-bottom: -2%;
+    margin-top: -2%;
     width: 10%;
     height: 200px;
 }
@@ -69,6 +103,10 @@ header {
     width: 100%;
 }
 
+#button1 {
+    left: 100%;
+}
+
 .clear {
     clear: both;
 }
@@ -84,7 +122,7 @@ header {
 }
 
 .leftbutton:hover, .rightbutton:hover {
-    background-color: gray;
+    background-color: #3E4340;
 }
 
 .rightbutton {

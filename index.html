@@ -6,15 +6,16 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
+        <input id="mode" onclick="mode()" type="image" src="dark.png">
         <img id="logo" src="logo.png">
-        <button id="button1" onclick="mode()">press for mode</button>
+       
         <nav>
             <div class="links-container">
-                <a class="underline" href="home.html">Home</a>
-                <a class="underline" href="about.html">About</a>
-                <a class="underline" href="contact.html">Contact</a>
-                <a class="underline" href="products.html">Products</a>
+                <a onmouseover="underline()" class="underline" href="home.html">Home</a>
+                <a onmouseover="underline()" class="underline" href="about.html">About</a>
+                <a onmouseover="underline()" class="underline" href="contact.html">Contact</a>
+                <a onmouseover="underline()" class="underline" href="products.html">Products</a>
             </div>
         </nav>
         <div class="clear"></div>
@@ -24,7 +25,7 @@
             <img class="socials" src="tiktok.png">
         </div>
     </header>
-    <div class="manualslideshow">
+    <div id="theslides" class="manualslideshow">
         <img class="slideshow" src="instagram.png">
         <img class="slideshow" src="logo.png">
         <img class="slideshow" src="shoes.jpg">
@@ -38,6 +39,12 @@
     </div>
     <p>hello there</p>
     <p>how are you</p>
+    <button>ORDER NOW</button>
+    <div>
+        <p><pre></pre>
+
+        </p>
+    </div>
     <script>
         let currentModeValue = false;
         let slideIndex = 1;
@@ -57,28 +64,32 @@
             }
             x[slideIndex - 1].style.display = "block";
         }
+
         function mode() {
+            let theBorder=document.getElementById("theslides");
+            let header=document.getElementById("header");
+
             console.log("test", currentModeValue)
             if (currentModeValue === false) {
-                console.log(currentModeValue)
-                document.body.style.backgroundColor = "black";
+                document.body.style.backgroundColor = "#3E4340";
                 let allP = document.querySelectorAll("p");
-                document.body.style.color = "white"
+                document.body.style.color = "white";
+                theBorder.style.borderColor="white";
+                header.style.borderColor="white";
+                document.getElementById("mode").src="light.png";
                 currentModeValue = true;
-                console.log(currentModeValue)
-
             }
             else {
-                console.log("hehehehe")
-
                 document.body.style.backgroundColor = "white";
                 let allP = document.querySelectorAll("p");
                 document.body.style.color = "black"
+                theBorder.style.borderColor="black";
+                header.style.borderColor="black";
+                document.getElementById("mode").src="dark.png";
                 currentModeValue = false;
-                console.log("hahahaha")
-
             }
         }
+
 
     </script>
 </body>
