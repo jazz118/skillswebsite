@@ -5,7 +5,7 @@
 </head>
 <body>
     <header id="header">
-        <a href="main.html"><img id="logo" src="logo.png" href="main.html"></a>   
+        <a id="logo-link" href="main.html"><img id="logo" src="logo.png" href="main.html"></a>   
        
         <nav>
                 <div class="socials-container">
@@ -72,6 +72,38 @@
     </div>
     <button onclick="location.href='order.html'" class="order">ORDER NOW</button>
     <script>
+
+const element = document.getElementById('logo');
+const scrollPosition = element.scrollTop;
+console.log(scrollPosition);
+
+
+
+
+
+
+
+
+window.onscroll = function() {myFunction()};
+
+imageToGetRidOf=document.getElementById("logo");
+
+function myFunction() {
+  if (document.body.scrollTop > 50) {
+    imageToGetRidOf.remove();
+    // document.getElementById("logo").display = "none";
+  }
+}
+
+
+
+
+
+
+
+
+
+
         let currentModeValue = false;
 
         let myIndex = 0;
