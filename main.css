@@ -19,8 +19,6 @@ nav {
     padding: 3px 3px;
     height: 100px;
     word-spacing: 2em;
-    margin-left: 35%;
-    margin-top: 1%;
     margin-bottom: -2%;
 }
 
@@ -56,18 +54,17 @@ nav {
 }
 
 .socials {
-    width: 3%;
-    height: 35px;
+    width: 2%;
 }
 
 .links-container {
-    float: left;
+    margin-left: 35%;
+    margin-top: -2.5%;
 }
 
 .socials-container {
-    margin-left: 47.5%;
-    margin-bottom: 2%;
-
+    width: 100%;
+    margin-top: 3%;
 }
 
 header {
@@ -82,13 +79,12 @@ header {
 #mode {
     width: 2%;
     margin-left: 97%;
-    margin-top: 1%;
+    top: 1%;
 }
 
 #logo {
     margin-left: 45%;
     margin-bottom: -3%;
-    margin-top: -2%;
     width: 10%;
     height: 200px;
 }
