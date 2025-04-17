@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header id="header">
+        <input id="mode" onclick="mode()" type="image" src="dark.png">
+        <a href="main.html"><img id="logo" src="logo.png" href="main.html"></a>   
+        <nav>
+            <div class="links-container">
+                <a onmouseover="underline()" class="underline" href="home.html">Home</a>
+                <a onmouseover="underline()" class="underline" href="about.html">About</a>
+                <a onmouseover="underline()" class="underline" href="contact.html">Contact</a>
+                <a onmouseover="underline()" class="underline" href="services.html">Services</a>
+                <a onmouseover="underline()" class="underline" href="gallery.html">Gallery</a>
+            </div>
+        </nav>
+        <div class="clear"></div>
+        <div class="socials-container">
+            <img class="socials" src="twitter.png">
+            <img class="socials" src="instagram.png">
+            <img class="socials" src="tiktok.png">
+        </div>
+    </header>
+    <div id="theslides" class="manualslideshow">
+        <img class="slideshow" src="instagram.png">
+        <img class="slideshow" src="logo.png">
+        <img class="slideshow" src="shoes.jpg">
+        <img class="slideshow" src="twitter.png">
+        <img class="slideshow" src="tiktok.png">
+    </div>
+    <div class="aboutSection">
+    </div>
+    <div class="info">
+        <h1>About Our Company</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, repudiandae error numquam impedit labore, quisquam nobis,<br>
+            ullam quos maiores quas voluptatibus est doloribus amet nam! Molestias cupiditate iste totam sit!<br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat minus vitae molestias iusto debitis architecto repudiandae optio atque praesentium?<br>
+            Sed enim soluta perspiciatis ex porro eum iusto molestias magnam placeat.<br>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, repudiandae error numquam impedit labore, quisquam nobis,<br>
+            ullam quos maiores quas voluptatibus est doloribus amet nam! Molestias cupiditate iste totam sit!<br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat minus vitae molestias iusto debitis architecto repudiandae optio atque praesentium?<br>
+            Sed enim soluta perspiciatis ex porro eum iusto molestias magnam placeat.<br>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, repudiandae error numquam impedit labore, quisquam nobis,<br>
+            ullam quos maiores quas voluptatibus est doloribus amet nam! Molestias cupiditate iste totam sit!<br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat minus vitae molestias iusto debitis architecto repudiandae optio atque praesentium?<br>
+            Sed enim soluta perspiciatis ex porro eum iusto molestias magnam placeat.<br>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, repudiandae error numquam impedit labore, quisquam nobis,<br>
+            ullam quos maiores quas voluptatibus est doloribus amet nam! Molestias cupiditate iste totam sit!<br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat minus vitae molestias iusto debitis architecto repudiandae optio atque praesentium?<br>
+            Sed enim soluta perspiciatis ex porro eum iusto molestias magnam placeat.<br>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, repudiandae error numquam impedit labore, quisquam nobis,<br>
+            ullam quos maiores quas voluptatibus est doloribus amet nam! Molestias cupiditate iste totam sit!<br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat minus vitae molestias iusto debitis architecto repudiandae optio atque praesentium?<br>
+            Sed enim soluta perspiciatis ex porro eum iusto molestias magnam placeat.<br>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, repudiandae error numquam impedit labore, quisquam nobis,<br>
+            ullam quos maiores quas voluptatibus est doloribus amet nam! Molestias cupiditate iste totam sit!<br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat minus vitae molestias iusto debitis architecto repudiandae optio atque praesentium?<br>
+            Sed enim soluta perspiciatis ex porro eum iusto molestias magnam placeat.<br>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, repudiandae error numquam impedit labore, quisquam nobis,<br>
+            ullam quos maiores quas voluptatibus est doloribus amet nam! Molestias cupiditate iste totam sit!<br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat minus vitae molestias iusto debitis architecto repudiandae optio atque praesentium?<br>
+            Sed enim soluta perspiciatis ex porro eum iusto molestias magnam placeat.<br>
+        </p>
+
+    </div>
+    <button onclick="location.href='order.html'" class="order">ORDER NOW</button>
+    <script>
+        let currentModeValue = false;
+
+        let myIndex = 0;
+        carousel();
+
+        function carousel() {
+            let i;
+            let x = document.getElementsByClassName("slideshow");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2000);
+        }
+
+        function mode() {
+            let theBorder=document.getElementById("theslides");
+            let header=document.getElementById("header");
+
+            console.log("test", currentModeValue)
+            if (currentModeValue === false) {
+                document.body.style.backgroundColor = "#3E4340";
+                let allP = document.querySelectorAll("p");
+                document.body.style.color = "white";
+                theBorder.style.borderColor="white";
+                header.style.borderColor="white";
+                document.getElementById("mode").src="light.png";
+                currentModeValue = true;
+            }
+            else {
+                document.body.style.backgroundColor = "white";
+                let allP = document.querySelectorAll("p");
+                document.body.style.color = "black"
+                theBorder.style.borderColor="black";
+                header.style.borderColor="black";
+                document.getElementById("mode").src="dark.png";
+                currentModeValue = false;
+            }
+        }
+    </script>
+</body>
+</html>
