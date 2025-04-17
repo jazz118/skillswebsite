@@ -56,8 +56,8 @@ nav {
 }
 
 .socials {
-    width: 3.5%;
-    height: 40px;
+    width: 3%;
+    height: 35px;
 }
 
 .links-container {
@@ -75,8 +75,6 @@ header {
     border-bottom: solid rgb(0, 0, 0) 3px;
     width: 100%;
     z-index: 1;
-}
-nav {
     position: sticky;
     top: 0;
 }
@@ -97,7 +95,7 @@ nav {
 
 .manualslideshow {
     width: 70%;
-    height: 500px;
+    height: 554px;
     margin-left: 15.5%;
     margin-top: 2%;
     border: solid 2px black;
@@ -105,7 +103,7 @@ nav {
 }
 
 .slideshow {
-    height: 500px;
+    height: 550px;
     width: 100%;
 }
 
