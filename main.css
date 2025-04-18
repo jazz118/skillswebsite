@@ -6,7 +6,6 @@ E6DBC3
 D7893E
 */
 
-
 * {
     box-sizing: border-box;
 }
@@ -17,7 +16,7 @@ body {
 
 nav {
     padding: 3px 3px;
-    height: 100px;
+    height: 20%;
     word-spacing: 2em;
     margin-bottom: -2%;
 }
@@ -29,7 +28,6 @@ nav {
     font-size: 200%;
     margin-top: -1%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
 
 .underline:hover {
@@ -96,45 +94,17 @@ header {
     height: 554px;
     margin-left: 15.5%;
     margin-top: 2%;
-    border: solid 2px black;
+    border: solid 3px black;
     margin-bottom: 5%;
 }
 
 .slideshow {
-    height: 550px;
+    height: 548px;
     width: 100%;
-}
-
-#button1 {
-    left: 100%;
 }
 
 .clear {
     clear: both;
-}
-
-.leftbutton,
-.rightbutton {
-    background-color: rgba(0, 0, 0, 0);
-    width: 5%;
-    padding: 1%;
-    font-size: 100%;
-    position: relative;
-    top: -13em;
-
-}
-
-.leftbutton:hover,
-.rightbutton:hover {
-    background-color: #3E4340;
-}
-
-.rightbutton {
-    margin-left: 83%;
-}
-
-.leftbutton {
-    margin-left: 3%;
 }
 
 .info {
@@ -160,10 +130,9 @@ p {
     padding: 2%;
     font-size: 200%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border: solid 2px black;
+    border: solid 3px black;
     border-radius: 7px;
     margin-left: 38%;
-
     position: relative;
     text-decoration: none;
     color: rgb(0, 0, 0);
@@ -174,9 +143,7 @@ p {
 .order:hover {
     background-color: #d39256;
     color: rgb(0, 0, 0);
-
 }
-
 
 .order::before {
     content: "";
@@ -193,4 +160,12 @@ p {
 
 .order:hover::before {
     transform: scaleX(1);
+}
+
+footer {
+    background-color: #a84605;
+    width: 100%;
+    height: 200px;
+    border-top: solid black 3px;
+    margin-top: 2%;
 }
