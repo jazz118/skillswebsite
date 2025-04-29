@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Shoe Website</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
 </head>
+
 <body>
     <header id="header">
         <a id="logo-link" href="main.html"><img id="logo" src="logo.png" href="main.html"></a>
@@ -34,8 +36,8 @@
     <div class="aboutSection">
     </div>
     <div class="info">
-        <h1>About Our Company</h1>
-        <p>
+        <h1 class='heading'>About Our Company</h1>
+        <p class='para'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, repudiandae error numquam impedit
             labore, quisquam nobis,<br>
             ullam quos maiores quas voluptatibus est doloribus amet nam! Molestias cupiditate iste totam sit!<br>
@@ -81,10 +83,10 @@
         </p>
     </div>
     <button class="order" onclick="location.href='order.html'">ORDER NOW</button>
-    <footer>
+    <footer id="footer">
         <ul>
             <li>
-                <a onmouseover="underline()" class="underline" href="home.html">Home</a>                
+                <a onmouseover="underline()" class="underline" href="home.html">Home</a>
             </li>
             <li>
                 <a onmouseover="underline()" class="underline" href="about.html">About</a>
@@ -101,6 +103,31 @@
         </ul>
     </footer>
     <script>
+        const observer = new IntersectionObserver(entries => {
+            // Loop over the entries
+            entries.forEach(entry => {
+                // If the element is visible
+                if (entry.isIntersecting) {
+                    // Add the animation class
+                    entry.target.classList.add('image-animation');
+                }
+            });
+        });
+
+        let viewboxHeading = document.querySelectorAll('.heading');
+        let viewboxParagraph = document.querySelectorAll('.para');
+        let viewboxButton = document.querySelectorAll('.order');
+
+        viewboxHeading.forEach(heading => {
+            observer.observe(heading);
+        });
+        viewboxParagraph.forEach(para => {
+            observer.observe(para);
+        });
+        viewboxButton.forEach(button => {
+            observer.observe(button);
+        });
+
         let logoElement = document.getElementById("logo");
         window.addEventListener("scroll", function () {
             console.log(window.pageYOffset);
@@ -136,6 +163,7 @@
             let theBorder = document.getElementById("theslides");
             let header = document.getElementById("header");
             let orderButton = document.getElementsByClassName("order");
+            let footer = document.getElementById('footer');
             console.log("test", currentModeValue)
             if (currentModeValue === false) {
                 document.body.style.backgroundColor = "#3E4340"; //gray
@@ -144,6 +172,7 @@
                 document.body.style.color = "white";
                 theBorder.style.borderColor = "white";
                 header.style.borderColor = "white";
+                footer.style.borderColor = 'white';
                 document.getElementById("mode").src = "light.png";
                 currentModeValue = true;
             }
@@ -154,10 +183,13 @@
                 document.body.style.color = "black"
                 theBorder.style.borderColor = "black";
                 header.style.borderColor = "black";
+                footer.style.borderColor = 'black';
+
                 document.getElementById("mode").src = "dark.png";
                 currentModeValue = false;
             }
         }
     </script>
 </body>
+
 </html>
