@@ -101,6 +101,20 @@
         </ul>
     </footer>
     <script>
+
+
+        // looking for changes
+        const observer = new IntersectionObserver(entries => {
+            // loops over entries (the viewbox variables)
+            entries.forEach(entry => {
+                // if the element is visible
+                if (entry.isIntersecting) {
+                    // add animation class
+                    entry.target.classList.add('image-animation');
+                }
+            });
+        });
+
         // initializing the elements that need to be observed for animation kickoff
         let viewboxHeading = document.querySelectorAll('.heading');
         let viewboxParagraph = document.querySelectorAll('.para');
@@ -114,18 +128,6 @@
         });
         viewboxButton.forEach(button => {
             observer.observe(button);
-        });
-
-        // looking for changes
-        const observer = new IntersectionObserver(entries => {
-            // loops over entries (the viewbox variables)
-            entries.forEach(entry => {
-                // if the element is visible
-                if (entry.isIntersecting) {
-                    // add animation class
-                    entry.target.classList.add('image-animation');
-                }
-            });
         });
 
         // sticky header
@@ -146,9 +148,9 @@
         })
 
         // calls function to run indefinitely
+        let myIndex = 0;
         carousel();
         // actually making function
-        let myIndex = 0;
         function carousel() {
             let i;
             let x = document.getElementsByClassName("slideshow");
