@@ -184,6 +184,25 @@ p {
     transform: scaleX(1);
 }
 
+#scrollToTopButton {
+    z-index: 99;
+    right: 2%;
+    bottom: 1%;
+    position: fixed;
+    font-size: 18px;
+    background-color: #2e87a1;
+    border: solid black ;
+    padding: 15px;
+    border-radius: 7px;
+    color: white;
+    display: none;
+  }
+  
+  #scrollToTopButton:hover {
+    background-color: #555;
+  }
+
+
 footer {
     background-color: #2e87a1;
     width: 100%;

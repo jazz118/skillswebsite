@@ -81,6 +81,8 @@
         </p>
     </div>
     <button class="order" onclick="location.href='order.html'">ORDER NOW</button>
+    <button onclick="toTop()" id="scrollToTopButton">Scroll To Top</button>
+
     <footer id="footer">
         <ul>
             <li>
@@ -101,7 +103,22 @@
         </ul>
     </footer>
     <script>
-
+        // scroll to top button
+        let mybutton = document.getElementById("scrollToTopButton");
+        window.onscroll = function() {scrollFunction()};
+        // if scrolled past a certain point,
+        function scrollFunction() {
+        if (document.documentElement.scrollTop > 130) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+        // actually brings you to top
+        function toTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
 
         // looking for changes
         const observer = new IntersectionObserver(entries => {
@@ -170,6 +187,7 @@
             let header = document.getElementById("header");
             let orderButton = document.getElementsByClassName("order");
             let footer = document.getElementById('footer');
+            let scrollButton = document.getElementById('scrollToTopButton');
             console.log("test", currentModeValue)
             // dark mode
             if (currentModeValue === false) {
@@ -180,6 +198,7 @@
                 theBorder.style.borderColor = "white";
                 header.style.borderColor = "white";
                 footer.style.borderColor = 'white';
+                scrollButton.style.borderColor = 'white';
                 document.getElementById("mode").src = "light.png";
                 currentModeValue = true;
             }
@@ -192,6 +211,7 @@
                 theBorder.style.borderColor = "black";
                 header.style.borderColor = "black";
                 footer.style.borderColor = 'black';
+                scrollButton.style.borderColor = 'black';
                 document.getElementById("mode").src = "dark.png";
                 currentModeValue = false;
             }
