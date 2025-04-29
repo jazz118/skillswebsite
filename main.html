@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Shoe Website</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
 </head>
-
 <body>
     <header id="header">
         <a id="logo-link" href="main.html"><img id="logo" src="logo.png" href="main.html"></a>
@@ -103,21 +101,11 @@
         </ul>
     </footer>
     <script>
-        const observer = new IntersectionObserver(entries => {
-            // Loop over the entries
-            entries.forEach(entry => {
-                // If the element is visible
-                if (entry.isIntersecting) {
-                    // Add the animation class
-                    entry.target.classList.add('image-animation');
-                }
-            });
-        });
-
+        // initializing the elements that need to be observed for animation kickoff
         let viewboxHeading = document.querySelectorAll('.heading');
         let viewboxParagraph = document.querySelectorAll('.para');
         let viewboxButton = document.querySelectorAll('.order');
-
+        // going through list from querySelectorAll for that element and observing it
         viewboxHeading.forEach(heading => {
             observer.observe(heading);
         });
@@ -128,25 +116,39 @@
             observer.observe(button);
         });
 
+        // looking for changes
+        const observer = new IntersectionObserver(entries => {
+            // loops over entries (the viewbox variables)
+            entries.forEach(entry => {
+                // if the element is visible
+                if (entry.isIntersecting) {
+                    // add animation class
+                    entry.target.classList.add('image-animation');
+                }
+            });
+        });
+
+        // sticky header
         let logoElement = document.getElementById("logo");
         window.addEventListener("scroll", function () {
             console.log(window.pageYOffset);
             let logoLink = document.getElementById("logo-link");
             console.log(logoElement);
             console.log(logoLink);
+            // at certain point during scrolling, element (logo) is removed
             if (window.pageYOffset >= 44) {
                 logoElement.remove();
             }
+            // added back at a certain point (still working on it)
             else {
-
                 logoLink.appendChild(logoElement);
             }
         })
 
-        let currentModeValue = false;
-        let myIndex = 0;
-
+        // calls function to run indefinitely
         carousel();
+        // actually making function
+        let myIndex = 0;
         function carousel() {
             let i;
             let x = document.getElementsByClassName("slideshow");
@@ -159,12 +161,15 @@
             setTimeout(carousel, 2000);
         }
 
+        // changes color scheme to dark/light
+        let currentModeValue = false;
         function mode() {
             let theBorder = document.getElementById("theslides");
             let header = document.getElementById("header");
             let orderButton = document.getElementsByClassName("order");
             let footer = document.getElementById('footer');
             console.log("test", currentModeValue)
+            // dark mode
             if (currentModeValue === false) {
                 document.body.style.backgroundColor = "#3E4340"; //gray
                 let allP = document.querySelectorAll("p");
@@ -176,6 +181,7 @@
                 document.getElementById("mode").src = "light.png";
                 currentModeValue = true;
             }
+            // light mode
             else {
                 document.body.style.backgroundColor = "white";
                 let allP = document.querySelectorAll("p");
@@ -184,12 +190,10 @@
                 theBorder.style.borderColor = "black";
                 header.style.borderColor = "black";
                 footer.style.borderColor = 'black';
-
                 document.getElementById("mode").src = "dark.png";
                 currentModeValue = false;
             }
         }
     </script>
 </body>
-
 </html>
